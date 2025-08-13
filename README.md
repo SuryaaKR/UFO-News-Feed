@@ -9,6 +9,7 @@ This repository is part of a locally hosted [n8n](https://n8n.io) automation pro
 - Cleans up timing markers and bracketed notes.
 - Trims the text to 17,000 characters to stay within n8n payload limits.
 - Outputs JSON for easy parsing in n8n.
+- Includes a standalone interactive script that saves transcripts as PDFs.
 
 ## Requirements
 
@@ -22,6 +23,16 @@ python YT_transcripts.py <video_url_or_id1> [<video_url_or_id2> ...]
 ```
 
 The script prints a JSON array describing each transcript. In a self-hosted n8n instance, an **Execute Command** node can run this script and pass its JSON output to later nodes for analysis or storage.
+
+### Interactive PDF script
+
+For a quick one-off transcript in PDF format, run:
+
+```bash
+python interactive_transcript_to_pdf.py
+```
+
+The script will prompt for a YouTube URL or video ID and create a `{video_id}_transcript.pdf` file in the current directory.
 
 ## Local n8n Integration
 
